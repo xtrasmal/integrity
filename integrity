@@ -8,10 +8,10 @@ if (PHP_SAPI !== 'cli') {
 require __DIR__ . '/vendor/autoload.php';
 
 use App\Integrity;
-use Wirelab\Command\CheckController;
-use Wirelab\Command\PharController;
-use Wirelab\Command\SetupController;
-use Wirelab\Command\ZipController;
+use Xtrasmal\Command\CheckController;
+use Xtrasmal\Command\PharController;
+use Xtrasmal\Command\SetupController;
+use Xtrasmal\Command\ZipController;
 
 $app = new Integrity(getcwd());
 $app->registerController('validate', new CheckController($app));
