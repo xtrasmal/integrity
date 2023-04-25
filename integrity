@@ -1,0 +1,29 @@
+#!/usr/local/bin/php
+<?php
+
+if (PHP_SAPI !== 'cli') {
+    exit;
+}
+
+require __DIR__ . '/vendor/autoload.php';
+
+use App\Integrity;
+use Wirelab\Command\CheckController;
+use Wirelab\Command\PharController;
+use Wirelab\Command\SetupController;
+use Wirelab\Command\ZipController;
+
+$app = new Integrity(getcwd());
+$app->registerController('validate', new CheckController($app));
+$app->registerController('build:phar', new PharController($app));
+$app->registerController('build:zip', new ZipController($app));
+$app->registerController('setup', new SetupController($app));
+
+$app->registerCommand('help', function (array $argv = []) use ($app) {
+    $app->printer()->display("Validate project files: php $app validate");
+    $app->printer()->display("Build a phar executable: php $app build:phar");
+    $app->printer()->display("Build a zip archive: php $app build:zip");
+    $app->printer()->display("Setup Integrity: php $app setup");
+});
+
+$app->runCommand($argv);

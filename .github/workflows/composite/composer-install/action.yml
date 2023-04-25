@@ -1,0 +1,16 @@
+name: "composer install"
+description: "Install composer dependencies"
+
+runs:
+  using: "composite"
+  steps:
+
+  - name: validate composer.json and composer.lock
+    run: composer validate
+    shell: bash
+
+  - name: run composer install / update
+    uses: "ramsey/composer-install@v2"
+    with:
+      composer-options: "--prefer-dist --no-progress --no-interaction --no-suggest --ignore-platform-reqs"
+      ignore-cache: true

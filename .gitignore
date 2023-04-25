@@ -1,0 +1,8 @@
+.env
+.envrc
+secrets.zsh
+vendor
+node_modules
+.idea
+.vscode
+.DS_Store

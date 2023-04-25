@@ -1,0 +1,10 @@
+name: "wirelab code integrity"
+description: "Run code integrity"
+
+runs:
+  using: "composite"
+  steps:
+    - name: integrity check
+      run: php integrity.phar validate
+      shell: bash
+

@@ -1,0 +1,26 @@
+{
+	"name": "wirelab/integrity",
+	"type": "library",
+	"description": "Library to run code integrity checks",
+	"keywords": [
+		"hash",
+		"checksum",
+		"integrity"
+	],
+	"homepage": "https://github.com/wirelab/integrity",
+	"authors": [
+		{
+			"name": "Wirelab",
+			"homepage": "https://wirelab.nl"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Wirelab\\": "src/",
+			"App\\": "lib/"
+		}
+	},
+	"require": {
+		"ext-zip": "*"
+	}
+}

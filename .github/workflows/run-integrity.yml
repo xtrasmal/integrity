@@ -1,0 +1,29 @@
+name: Code integrity check
+on: [workflow_dispatch]
+jobs:
+    integrity:
+        name: Run integrity check
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repository
+              uses: actions/checkout@v2
+
+            - name: setup php
+              uses: ./.github/workflows/composite/setup-php
+              with:
+                  php-version: '8.1'    
+                  
+            - name: install packages
+              uses: ./.github/workflows/composite/composer-install
+
+            - name: validate integrity of code
+              run: php integrity.phar validate
+              shell: bash
+
+            - if: ${{ success() }}
+              name: Integrity check was successful
+              run: exit 0
+
+            - if: ${{ failure() }}
+              name: Integrity check has failed
+              run: exit 1
