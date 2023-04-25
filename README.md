@@ -1,5 +1,5 @@
-# Wirelab Code Integrity 
-![code integrity](https://github.com/wirelab/integrity/actions/workflows/run-integrity.yml/badge.svg?branch=main)
+#  Code Integrity 
+![code integrity](https://github.com/xtrasmal/integrity/actions/workflows/run-integrity.yml/badge.svg?branch=main)
 
 This repository holds a CLI program which can be used to check the integrity of deployed code.
 
