@@ -1,5 +1,5 @@
 {
-	"name": "wirelab/integrity",
+	"name": "xtrasmal/integrity",
 	"type": "library",
 	"description": "Library to run code integrity checks",
 	"keywords": [
@@ -7,16 +7,10 @@
 		"checksum",
 		"integrity"
 	],
-	"homepage": "https://github.com/wirelab/integrity",
-	"authors": [
-		{
-			"name": "Wirelab",
-			"homepage": "https://wirelab.nl"
-		}
-	],
+	"homepage": "https://github.com/xtrasmal/integrity",
 	"autoload": {
 		"psr-4": {
-			"Wirelab\\": "src/",
+			"Xtrasmal\\": "src/",
 			"App\\": "lib/"
 		}
 	},
