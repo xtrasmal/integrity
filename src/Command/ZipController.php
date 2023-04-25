@@ -1,6 +1,6 @@
 <?php
 
-namespace Wirelab\Command;
+namespace Xtrasmal\Command;
 
 use App\CommandController;
 use App\Hash;
