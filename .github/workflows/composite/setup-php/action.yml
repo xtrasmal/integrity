@@ -26,14 +26,14 @@ runs:
         key: ${{ inputs.cache-key }}
 
     - name: cache php extensions
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ${{ steps.extensions-cache.outputs.dir }}
         key: ${{ steps.extensions-cache.outputs.key }}
         restore-keys: ${{ steps.extensions-cache.outputs.key }}
         
     - name: setup php ${{ inputs.php-version }}
-      uses: shivammathur/setup-php@2.5.0
+      uses: shivammathur/setup-php@2.6.0
       with:
           php-version: ${{ inputs.php-version }}
           extensions: ${{ inputs.php-extensions }}
